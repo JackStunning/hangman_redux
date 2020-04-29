@@ -6,7 +6,7 @@
 
 #### By **Adela Darmansyah, Tiffany Siu, Andriy Veremyeyev, Jack Dunning**
 
-[About](#About) | [User Stories](#User-Stories) | [Component Diagram](##React-Component-Diagram) | [Screenshots](#Screenshots) | [Installation](#Installation-Instructions) | [Bugs](#Known-Bugs) | [Technologies](#Technologies-Used) | [Contact](#Support-and-Contact-Details)
+[About](#About) | [Component Diagram](##React-Component-Diagram) | [Screenshots](#Screenshots) | [Installation](#Installation-Instructions) | [Bugs](#Known-Bugs) | [Technologies](#Technologies-Used) | [Contact](#Support-and-Contact-Details)
 
 ![GitHub](https://img.shields.io/github/license/ayohana/hangman_redux?color=%23DE98B2&style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ayohana/hangman_redux/master?color=%23DE98B2&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/ayohana/hangman_redux?color=%23DE98B2&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ayohana/hangman_redux?color=%23DE98B2&style=for-the-badge)
 
@@ -16,8 +16,13 @@
 
 **Recreating the game of hangman in Redux.**
 
-## User Stories
+### TO-DO
 
+- [ ] Make sure all tests pass
+- [ ] Finish writing reducers
+- [ ] Make sure used action creators and constants
+- [ ] Write game with states
+- [ ] Double check the initialState has the correct properties
 
 ## React Component Diagram
 
