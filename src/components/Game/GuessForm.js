@@ -3,15 +3,15 @@ import React from "react";
 function GuessForm(){
   return (
     <React.Fragment>
-      <form onSubmit={props.formSubmissionHandler}>
+      <form>
         <input
           type='text'
           name='guess'
-          placeholder='Guess' /><br />
-        <button type='submit'>{props.buttonText}</button>
+          placeholder='Guess letter' /><br />
+        <button className="btn btn-primary" type='submit'>Guess!</button>
       </form>
     </React.Fragment>
   );
 }
 
-export default GuessForm
+export default GuessForm;

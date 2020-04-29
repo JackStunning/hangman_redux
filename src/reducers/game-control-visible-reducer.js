@@ -1,6 +1,8 @@
+import * as c from '../actions/ActionTypes'
+
 export default (state = false, action) => {
   switch (action.type){
-    case 'TOGGLE_GAME_PLAY':
+    case c.TOGGLE_GAME_CONTROL:
       return !state;
     default:
       return state;
