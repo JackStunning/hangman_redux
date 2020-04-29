@@ -14,6 +14,7 @@ class GameControl extends React.Component {
 
     return(
       <React.Fragment>
+        <h1>This is Game Control</h1>
         <GamePlay />
         <GuessForm />
       </React.Fragment>

@@ -11,13 +11,17 @@ function Body(props) {
     const action = a.toggleGameControl();
     dispatch(action);
   };
-  console.log("PROPS IN BODY:", props);
+
+  const setVisibility = () => {
+    if (props.gameControlVisible) {
+      return <GameControl />
+    }
+  }
 
   return(
-
     <React.Fragment>
+      {setVisibility()}
       <button onClick={handleToggleGameControl}>New Game</button>
-      <GameControl />
     </React.Fragment>
   )
 }
