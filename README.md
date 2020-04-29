@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align=center>
 
-## Available Scripts
+# Hangman
 
-In the project directory, you can run:
+#### React & Redux Exercise for [Epicodus](https://www.epicodus.com/), 04.29.2020
 
-### `npm start`
+#### By **Adela Darmansyah, Tiffany Siu, Andriy Veremyeyev, Jack Dunning**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[About](#About) | [User Stories](#User-Stories) | [Component Diagram](##React-Component-Diagram) | [Screenshots](#Screenshots) | [Installation](#Installation-Instructions) | [Bugs](#Known-Bugs) | [Technologies](#Technologies-Used) | [Contact](#Support-and-Contact-Details)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![GitHub](https://img.shields.io/github/license/ayohana/hangman_redux?color=%23DE98B2&style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ayohana/hangman_redux/master?color=%23DE98B2&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/ayohana/hangman_redux?color=%23DE98B2&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ayohana/hangman_redux?color=%23DE98B2&style=for-the-badge)
 
-### `npm test`
+</div>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About
 
-### `npm run build`
+**Recreating the game of hangman in Redux.**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## User Stories
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## React Component Diagram
 
-### `npm run eject`
+<div align=center>
+  <img style="width:500px" src="./public/hangman-component-diagram.png">
+</div>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Screenshots
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- <img style="width:600px" src="./public/img/app-screenshot.jpg"> -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation Instructions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Clone this repository.
 
-## Learn More
+* Open the `Command Line Interface` and enter the following:
+  * `cd hangman_redux` to navigate into the repository.
+  * `npm install` to install all necessary plug-ins.
+  * `npm start` to start the application.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Known Bugs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+No known bugs at this time.
 
-### Code Splitting
+## Technologies Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* HTML
+* CSS
+* JavaScript
+* React
+* Redux
+* Jest
+* Babel
+* Draw.io
+* Markdown
+* _npm*_
 
-### Analyzing the Bundle Size
+_*Check out `package.json` file to see the complete list of all plug-ins._
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Support and Contact Details
 
-### Making a Progressive Web App
+Feel free to provide feedback via email: adela.yohana@gmail.com, tsiu88@gmail.com, belyybrat@gmail.com, or JackStunning9001@gmail.com.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### License
 
-### Advanced Configuration
+This application is licensed under the MIT license.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright (c) 2020 **Adela Darmansyah, Tiffany Siu, Andriy Veremyeyev, Jack Dunning**
