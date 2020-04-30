@@ -2,7 +2,7 @@
 
 # Hangman
 
-#### React & Redux Exercise for [Epicodus](https://www.epicodus.com/), 04.29.2020
+#### React & Redux Exercise for [Epicodus](https://www.epicodus.com/), 04.29.2020 - 04.30.2020
 
 #### By **Adela Darmansyah, Tiffany Siu, Andriy Veremyeyev, Jack Dunning**
 
@@ -18,8 +18,8 @@
 
 ### TO-DO
 
-- [ ] Make sure all tests pass
-- [ ] Finish writing reducers
+- [x] Make sure all tests pass
+- [x] Finish writing reducers
 - [ ] Make sure used action creators and constants
 - [ ] Write game with states
 - [ ] Double check the initialState has the correct properties

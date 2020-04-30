@@ -7,8 +7,8 @@ export default (state = InitialState, action) => {
       const randomIndex = Math.floor(Math.random() * state.wordsList.length);
       const randomWordGenerated = state.wordsList[randomIndex];
       const generateBlanksArray = function() {
-        let arr = [];
-        for (let i = 0; i < randomWordGenerated.length; i++) {
+        let arr = ["_"];
+        for (let i = 1; i < randomWordGenerated.length; i++) {
           arr.push("_");
         }
         return arr;

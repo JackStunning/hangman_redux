@@ -30,7 +30,7 @@ describe ('rootReducer', () => {
     expect(store.getState().gameControlVisible).toEqual(gameControlVisibleReducer(undefined, action))
   });
 
-  test('Check that random word generated tate of gamePlayReducer mandroot reducer contained in list of possible words', () => {
+  test('Check that random word generated state of gamePlayReducer mandroot reducer contained in list of possible words', () => {
     let expected;
     let result;
     const action = {
@@ -43,10 +43,17 @@ describe ('rootReducer', () => {
   });
 
   test('Test Guess Correct state in gamePlayReducer matches root reducer', () => {
-    const action = {
-      type: c.GUESS_CORRECT
+    let expected;
+    let result;
+    const testStore = {
+      ...store,
     }
-    store.dispatch(action);
-    expect(store.getState().gamePlay).toEqual(gamePlayReducer(undefined, action));
+    const actionGuessCorrect = {
+      type: c.GUESS_CORRECT,
+    }
+    testStore.dispatch(actionGuessCorrect);
+    expected = testStore.getState().gamePlay;
+    result = gamePlayReducer(store.getState().gamePlay, actionGuessCorrect);
+    expect(expected).toEqual(result);
   });
 });
