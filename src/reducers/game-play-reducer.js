@@ -1,6 +1,7 @@
-import * as c from '../actions/ActionTypes'
+import * as c from '../actions/ActionTypes';
+import InitialState from '../initialState';
 
-export default (state = {}, action) => {
+export default (state = InitialState, action) => {
   switch (action.type){
     case c.GENERATE_RANDOM_WORD:
       const randomIndex = Math.floor(Math.random() * state.wordsList.length);
@@ -18,37 +19,48 @@ export default (state = {}, action) => {
         randomWord: randomWordGenerated,
         blanks: generateBlanksArray()
       };
-      console.log("RANDOM WORD", stateGenerateRandomWord.randomWord);
       return stateGenerateRandomWord;
-    
+  
     case c.GUESS_INCORRECT:
-      const newStats = state.stats.push(state.guessLetter);
+      const newStats = function() {
+        let arr3 = state.stats;
+        if(!arr3.includes(state.guessLetter)){
+          arr3.push(state.guessLetter);
+        }
+        arr3.sort();
+        return arr3;
+      }
       const stateGuessIncorrect = {
         ...state,
         incorrectAmount: (state.incorrectAmount+1),
-        image: state.imagePaths[state.incorrectAmount+1],
-        stats: newStats,
-        messages: state.messages["incorrect"],
+        displayImage: state.image[state.incorrectAmount+1],
+        stats: newStats(),
+        displayMessage: (state.incorrectAmount+1 === 6) ? state.messages["lose"] : state.messages["incorrect"]
       };
       return stateGuessIncorrect;
     
     case c.GUESS_CORRECT:
+      let isWordComplete = false;
       const blankArray = state.blanks;
       const newBlanksArray = function() {
         let arr2 = [];
         for (let j = 0; j < state.randomWord.length; j++){
           if (state.randomWord[j] === state.guessLetter){
-            arr2.push(j);
+            arr2.push(j); //Push array index that matches guess
           }
         }
         for (let k = 0; k < blankArray.length; k++){
-          blankArray.splice(arr[k], 1, state.guessLetter);
+          blankArray.splice(arr2[k], 1, state.guessLetter); //Replace blank at indexes with guessed letter
+        }
+        if (!blankArray.includes("_")) {
+          isWordComplete = true;
         }
         return blankArray;
       };
       const stateGuessCorrect = {
         ...state,
         blanks: newBlanksArray(),
+        displayMessage: (isWordComplete) ? state.messages["win"] : state.messages["correct"]
       };
       return stateGuessCorrect;
       

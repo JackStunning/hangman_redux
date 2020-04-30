@@ -8,8 +8,7 @@ export default {
   messages: { 
     win: "You Win!", 
     lose: "You Lose!",
-    correctOnce: "Correct! Letter appeared once in the word.",
-    correctSeveral: "Correct! Letter appeared in the word.",
+    correct: "Correct! Letter appeared in the word.",
     incorrect: "Incorrect! Letter is not in the word."
   },
   displayMessage: "",

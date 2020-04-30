@@ -9,15 +9,14 @@ describe ("gamePlayReducer", () => {
   const testState = {
     gameControlVisible: false,
     wordsList: testWordsList,
-    image: "",
+    image: imagePaths,
     displayImage: "",
     stats: [],
     blanks: [],
     messages: { 
       win: "You Win!", 
       lose: "You Lose!",
-      correctOnce: "Correct! Letter appeared once in the word.",
-      correctSeveral: "Correct! Letter appeared in the word.",
+      correct: "Correct! Letter appeared in the word.",
       incorrect: "Incorrect! Letter is not in the word."
     },
     displayMessage: "",
@@ -48,7 +47,8 @@ describe ("gamePlayReducer", () => {
     const testStateWithRandomWord = {
       ...testState,
       randomWord: testRandomWord,
-      guessLetter: testGuessLetter
+      guessLetter: testGuessLetter,
+      blanks: ["_","_","_","_","_","_","_","_"]
     }
     expect(gamePlayReducer(testStateWithRandomWord, action).blanks[4]).toEqual("o");
   });
@@ -59,9 +59,10 @@ describe ("gamePlayReducer", () => {
     const testStateWithRandomWord = {
       ...testState,
       randomWord: testRandomWord,
-      guessLetter: testGuessLetter
+      guessLetter: testGuessLetter,
+      blanks: ["_","_","_","_","_","_","_","_"]
     }
-    expect(gamePlayReducer(testStateWithRandomWord, action).stats).toContain("a");
+    expect(gamePlayReducer(testStateWithRandomWord, action).stats[0]).toContain("a");
   });
 
   test('An incorrect guess should increment the number of incorrectAmount', () => {
@@ -82,22 +83,64 @@ describe ("gamePlayReducer", () => {
       ...testState,
       randomWord: testRandomWord,
       guessLetter: testGuessLetter,
-      incorrectAmount: testIncorrectAmount
     }
-    expect(gamePlayReducer(testStateWithRandomWord, action).displayImage).toEqual("https://upload.wikimedia.org/wikipedia/commons/8/8b/Hangman-0.png");
+    expect(gamePlayReducer(testStateWithRandomWord, action).displayImage).toEqual("https://upload.wikimedia.org/wikipedia/commons/3/30/Hangman-1.png");
   });
 
-  test('When the incorrectAmount reaches 6, it should display the correct message', () => {
+  test('When the incorrectAmount reaches 1, it should display the correct message', () => {
     action = { type: c.GUESS_INCORRECT };
-    const testIncorrectAmmount = 5;
+    const testIncorrectAmount = 0;
     const testGuessLetter = "a";
     const testStateWithRandomWord = {
       ...testState,
       randomWord: testRandomWord,
       guessLetter: testGuessLetter,
-      incorrectAmount: testIncorrectAmmount
+      incorrectAmount: testIncorrectAmount
+    }
+    expect(gamePlayReducer(testStateWithRandomWord, action).displayMessage).toEqual("Incorrect! Letter is not in the word.");
+  });
+
+  test('When the incorrectAmount reaches 6, it should display the correct message player loses', () => {
+    action = { type: c.GUESS_INCORRECT };
+    const testIncorrectAmount = 5;
+    const testGuessLetter = "a";
+    const testStateWithRandomWord = {
+      ...testState,
+      randomWord: testRandomWord,
+      guessLetter: testGuessLetter,
+      incorrectAmount: testIncorrectAmount
     }
     expect(gamePlayReducer(testStateWithRandomWord, action).displayMessage).toEqual("You Lose!");
+  });
+
+  test('When a guess is correct, it should display the correct message', () => {
+    action = { type: c.GUESS_CORRECT };
+    const testIncorrectAmount = 0;
+    const testGuessLetter = "o";
+    const testBlanks = ["_","_","_","_","_","_","_","_"]
+    const testStateWithRandomWord = {
+      ...testState,
+      randomWord: testRandomWord,
+      guessLetter: testGuessLetter,
+      incorrectAmount: testIncorrectAmount,
+      blanks: testBlanks
+    }
+    expect(gamePlayReducer(testStateWithRandomWord, action).displayMessage).toEqual("Correct! Letter appeared in the word.");
+  });
+
+  test('When a guess completes all the blanks, it should display the correct message player wins', () => {
+    action = { type: c.GUESS_CORRECT };
+    const testIncorrectAmount = 0;
+    const testGuessLetter = "o";
+    const testBlanks = ["e","p","i","c","_","d","u","s"]
+    const testStateWithRandomWord = {
+      ...testState,
+      randomWord: testRandomWord,
+      guessLetter: testGuessLetter,
+      incorrectAmount: testIncorrectAmount,
+      blanks: testBlanks
+    }
+    expect(gamePlayReducer(testStateWithRandomWord, action).displayMessage).toEqual("You Win!");
   });
   
 });
