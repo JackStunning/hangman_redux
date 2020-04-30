@@ -24,7 +24,7 @@
 - [ ] Write game with states
 - [ ] Double check the initialState has the correct properties
 
-## React Component Diagram
+## React Wireframe/Component Diagram
 
 <div align=center>
   <img style="width:500px" src="./public/hangman-component-diagram.png">
