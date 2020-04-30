@@ -1,1 +1,80 @@
+:root {
+  --main-color: #003049;
+  --secondary-color: #d62828;
+  --third-color: #f77f00;
+  --fourth-color: #eae2b7;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fourth-color);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+h2 {
+  margin: 1em;
+}
+
+input {
+  background-color: var(--main-color);
+  border-color: var(--third-color);
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em;
+}
+
+input::placeholder{
+  color: white;
+}
+
+button {
+  background-color: var(--secondary-color);
+  border-color: var(--third-color);
+  border-radius: 20px;
+  color: white;
+  padding: 1.25em;
+  margin: 1em;
+}
+
+img {
+  border: 1px solid var(--third-color);
+  border-radius: 5px;
+}
+
+#Header {
+  text-align: center;
+  padding: 1em;
+  margin: 0;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#Body {
+  text-align: center;
+  background-color: var(--main-color);
+  margin: 0 5em;
+  padding: 5em;
+  height: 100vh;
+  
+}
+
+#Footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--third-color);
+  color: white;
+  text-align: center;
+}
+
+#Footer h2{
+  margin: 0.5em;
+}
 

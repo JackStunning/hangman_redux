@@ -7,9 +7,15 @@ import Footer from './Footer';
 function App() {
   return (
     <React.Fragment>
-      <Header/>
-      <Body/>
-      <Footer/>
+      <div id="Header">
+        <Header/>
+      </div>
+      <div id="Body">
+        <Body/>
+      </div>
+      <div id="Footer">
+        <Footer/>
+      </div>
     </React.Fragment>
   );
 }

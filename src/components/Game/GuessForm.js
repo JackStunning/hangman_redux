@@ -1,17 +1,32 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function GuessForm(){
+function GuessForm(props){
+  function handleGuessFormSubmission(event){
+    event.preventDefault();
+    props.onGuess({
+      guessLetter: event.target.guess.value,
+    });
+  }
+
   return (
     <React.Fragment>
-      <form>
+      <form onSubmit={handleGuessFormSubmission}>
         <input
           type='text'
           name='guess'
-          placeholder='Guess letter' /><br />
+          maxLength={1}
+          placeholder='Guess letter' 
+          required />
+        <br />
         <button className="btn btn-primary" type='submit'>Guess!</button>
       </form>
     </React.Fragment>
   );
 }
+
+GuessForm.propTypes = {
+  onGuess: PropTypes.func,
+};
 
 export default GuessForm;
